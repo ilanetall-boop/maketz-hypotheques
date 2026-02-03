@@ -4,21 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Maketz Hypothèques | Conseil Hypothécaire à Distance en Israël</title>
-    <meta name="description" content="Conseil hypothécaire à distance en Israël. Obtenez les meilleurs taux d'intérêt et économisez des dizaines de milliers de shekels. Membre de l'Association des conseillers en hypothèques.">
+    <meta name="description" content="Conseil hypothécaire à distance en Israël. Obtenez les meilleurs taux d'intérêt et économisez des dizaines de milliers de shekels. Analyse gratuite et sans engagement.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         :root {
-            --primary: #0f1a2e;
-            --primary-light: #1a2d4a;
-            --gold: #c9a227;
-            --gold-light: #d4b44a;
+            --primary: #0a1628;
+            --primary-light: #152238;
+            --gold: #c4a265;
+            --gold-light: #d4b87a;
+            --gold-dark: #a8894f;
             --text: #2d3748;
             --text-light: #718096;
             --white: #ffffff;
-            --bg-light: #f5f0e8;
-            --bg-cream: #faf7f2;
+            --bg-cream: #f8f5f0;
+            --bg-warm: #faf8f5;
         }
 
         * {
@@ -45,9 +46,8 @@
             left: 0;
             right: 0;
             z-index: 1000;
-            background: rgba(15, 26, 46, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 15px 0;
+            background: rgba(10, 22, 40, 0.98);
+            padding: 12px 0;
         }
 
         .nav-container {
@@ -62,51 +62,68 @@
         .logo {
             color: var(--white);
             font-family: 'Cormorant Garamond', serif;
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             font-weight: 700;
             text-decoration: none;
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
         }
 
         .logo-hebrew {
-            font-size: 1.2rem;
             color: var(--gold);
         }
 
-        .nav-contact {
-            color: var(--white);
+        .nav-cta {
+            background: var(--gold);
+            color: var(--primary);
+            padding: 10px 25px;
+            border-radius: 25px;
             text-decoration: none;
+            font-weight: 600;
             font-size: 0.9rem;
+            transition: all 0.3s;
             display: flex;
             align-items: center;
             gap: 8px;
-            transition: color 0.3s;
         }
 
-        .nav-contact:hover {
-            color: var(--gold);
+        .nav-cta:hover {
+            background: var(--gold-light);
+            transform: scale(1.05);
         }
 
         /* Hero Section */
         .hero {
             min-height: 100vh;
-            background: linear-gradient(135deg, rgba(15, 26, 46, 0.92) 0%, rgba(10, 18, 32, 0.95) 100%),
-                        url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1920&q=80') center/cover;
+            background: var(--primary);
             display: flex;
             align-items: center;
-            padding: 120px 30px 80px;
+            padding: 100px 30px 60px;
             position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1200&q=80') center/cover;
+            opacity: 0.15;
         }
 
         .hero-container {
             max-width: 1200px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1.2fr 1fr;
             gap: 60px;
             align-items: center;
+            position: relative;
+            z-index: 1;
         }
 
         .hero-content {
@@ -114,35 +131,36 @@
         }
 
         .hero-logo {
-            margin-bottom: 25px;
-        }
-
-        .hero-logo-text {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 2rem;
-            color: var(--gold);
-            margin-bottom: 5px;
+            margin-bottom: 30px;
         }
 
         .hero-logo-hebrew {
-            font-size: 1.8rem;
+            font-size: 2.5rem;
             color: var(--white);
-            opacity: 0.9;
+            font-family: 'Cormorant Garamond', serif;
+            margin-bottom: 5px;
+        }
+
+        .hero-logo-subtitle {
+            color: var(--gold);
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
         }
 
         .hero h1 {
-            font-size: 2.8rem;
-            font-weight: 700;
+            font-size: 3rem;
+            font-weight: 600;
             line-height: 1.2;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             color: var(--gold);
+            font-style: italic;
         }
 
         .hero-subtitle {
-            font-size: 1.3rem;
-            opacity: 0.95;
-            margin-bottom: 15px;
-            line-height: 1.6;
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            line-height: 1.5;
         }
 
         .hero-subtitle strong {
@@ -150,10 +168,31 @@
         }
 
         .hero-description {
-            font-size: 1rem;
-            opacity: 0.85;
+            font-size: 1.05rem;
+            opacity: 0.9;
             margin-bottom: 35px;
-            line-height: 1.8;
+            line-height: 1.9;
+        }
+
+        .hero-trust {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 30px;
+            padding: 15px 20px;
+            background: rgba(196, 162, 101, 0.1);
+            border-left: 3px solid var(--gold);
+            border-radius: 0 10px 10px 0;
+        }
+
+        .hero-trust i {
+            color: var(--gold);
+            font-size: 1.5rem;
+        }
+
+        .hero-trust p {
+            font-size: 0.95rem;
+            opacity: 0.9;
         }
 
         .hero-cta {
@@ -166,35 +205,36 @@
             display: inline-flex;
             align-items: center;
             gap: 10px;
-            padding: 16px 32px;
+            padding: 18px 35px;
             border-radius: 8px;
             text-decoration: none;
             font-weight: 600;
-            font-size: 1rem;
+            font-size: 1.05rem;
             transition: all 0.3s;
             border: 2px solid transparent;
         }
 
-        .btn-primary {
+        .btn-gold {
             background: var(--gold);
             color: var(--primary);
         }
 
-        .btn-primary:hover {
+        .btn-gold:hover {
             background: var(--gold-light);
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(201, 162, 39, 0.3);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(196, 162, 101, 0.3);
         }
 
-        .btn-outline {
-            border-color: var(--white);
+        .btn-outline-light {
+            border-color: rgba(255,255,255,0.5);
             color: var(--white);
             background: transparent;
         }
 
-        .btn-outline:hover {
+        .btn-outline-light:hover {
             background: var(--white);
             color: var(--primary);
+            border-color: var(--white);
         }
 
         .hero-image {
@@ -203,63 +243,61 @@
 
         .hero-image-main {
             width: 100%;
-            max-width: 450px;
+            max-width: 400px;
             border-radius: 20px;
-            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
         }
 
-        .hero-badge {
+        .hero-stats {
             position: absolute;
-            bottom: -20px;
-            left: -20px;
+            bottom: -30px;
+            left: -30px;
+            display: flex;
+            gap: 15px;
+        }
+
+        .hero-stat {
             background: var(--gold);
             color: var(--primary);
             padding: 20px;
             border-radius: 15px;
             text-align: center;
-            box-shadow: 0 10px 30px rgba(201, 162, 39, 0.3);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         }
 
-        .hero-badge-number {
-            font-size: 2rem;
+        .hero-stat-number {
+            font-size: 1.8rem;
             font-weight: 700;
             font-family: 'Cormorant Garamond', serif;
         }
 
-        .hero-badge-text {
-            font-size: 0.8rem;
+        .hero-stat-text {
+            font-size: 0.75rem;
             font-weight: 600;
         }
 
-        /* Association Badge */
-        .association-badge {
-            background: var(--primary-light);
-            padding: 50px 30px;
+        /* Urgency Banner */
+        .urgency-banner {
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+            padding: 20px 30px;
             text-align: center;
         }
 
-        .association-badge p {
-            color: var(--white);
-            max-width: 800px;
-            margin: 0 auto;
-            font-size: 1rem;
-            line-height: 1.8;
-            opacity: 0.9;
+        .urgency-banner p {
+            color: var(--primary);
+            font-size: 1.1rem;
+            font-weight: 600;
         }
 
-        .association-badge strong {
-            color: var(--gold);
+        .urgency-banner strong {
+            text-decoration: underline;
         }
 
-        /* Advantages Section */
-        .advantages {
-            background: var(--bg-cream);
-            padding: 80px 30px;
-        }
-
+        /* Section Styles */
         .section-container {
             max-width: 1200px;
             margin: 0 auto;
+            padding: 0 30px;
         }
 
         .section-header {
@@ -276,29 +314,138 @@
         .section-header p {
             color: var(--text-light);
             font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* About Section with Image */
+        .about {
+            background: var(--bg-cream);
+            padding: 80px 30px;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-image {
+            position: relative;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+        }
+
+        .about-image-badge {
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            background: var(--primary);
+            color: var(--gold);
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .about-image-badge .number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        .about-image-badge .text {
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .about-content h2 {
+            font-size: 2.3rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .about-content h2 span {
+            color: var(--gold);
+            font-style: italic;
+        }
+
+        .about-content p {
+            color: var(--text);
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        .about-features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .about-feature {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 15px;
+            background: var(--white);
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .about-feature i {
+            color: var(--gold);
+            font-size: 1.2rem;
+        }
+
+        .about-feature span {
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+
+        /* Advantage Box */
+        .advantage-section {
+            background: var(--primary);
+            padding: 80px 30px;
         }
 
         .advantage-box {
-            background: var(--primary);
+            background: var(--primary-light);
             border: 2px solid var(--gold);
-            border-radius: 15px;
-            padding: 40px;
-            max-width: 700px;
-            margin: 0 auto 50px;
+            border-radius: 20px;
+            padding: 50px;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
         }
 
         .advantage-box h3 {
             color: var(--gold);
-            font-size: 1.8rem;
-            margin-bottom: 20px;
-            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 25px;
+            font-style: italic;
         }
 
         .advantage-box p {
             color: var(--white);
-            text-align: center;
-            font-size: 1.05rem;
-            line-height: 1.8;
+            font-size: 1.15rem;
+            line-height: 1.9;
+        }
+
+        /* Benefits Section */
+        .benefits {
+            background: var(--bg-warm);
+            padding: 80px 30px;
+        }
+
+        .benefits .section-header h2 {
+            color: var(--primary);
         }
 
         .benefits-grid {
@@ -309,39 +456,81 @@
 
         .benefit-card {
             background: var(--white);
-            padding: 35px 25px;
-            border-radius: 15px;
+            padding: 40px 30px;
+            border-radius: 20px;
             text-align: center;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-            transition: transform 0.3s;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .benefit-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--gold), var(--gold-light));
         }
 
         .benefit-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
         }
 
         .benefit-icon {
-            width: 70px;
-            height: 70px;
-            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 20px;
-            font-size: 1.8rem;
-            color: var(--primary);
+            margin: 0 auto 25px;
+            font-size: 2rem;
+            color: var(--gold);
         }
 
         .benefit-card h3 {
-            font-size: 1.3rem;
+            font-size: 1.4rem;
             color: var(--primary);
-            margin-bottom: 12px;
+            margin-bottom: 15px;
         }
 
         .benefit-card p {
             color: var(--text-light);
             font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        /* Mid CTA */
+        .mid-cta {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            padding: 70px 30px;
+            text-align: center;
+        }
+
+        .mid-cta h3 {
+            color: var(--white);
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+        }
+
+        .mid-cta h3 span {
+            color: var(--gold);
+        }
+
+        .mid-cta p {
+            color: rgba(255,255,255,0.9);
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+        }
+
+        .mid-cta .btn-gold {
+            font-size: 1.15rem;
+            padding: 20px 45px;
         }
 
         /* Pricing Section */
@@ -361,78 +550,80 @@
         .pricing-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
+            gap: 25px;
             max-width: 1100px;
             margin: 0 auto;
         }
 
         .pricing-card {
             background: var(--primary-light);
-            border: 2px solid var(--gold);
+            border: 2px solid rgba(196, 162, 101, 0.3);
             border-radius: 20px;
-            padding: 35px 25px;
+            padding: 40px 30px;
             text-align: center;
             position: relative;
-            transition: transform 0.3s;
+            transition: all 0.3s;
         }
 
         .pricing-card:hover {
-            transform: translateY(-10px);
+            border-color: var(--gold);
+            transform: translateY(-5px);
         }
 
         .pricing-card.popular {
+            border-color: var(--gold);
             transform: scale(1.05);
-            box-shadow: 0 20px 50px rgba(201, 162, 39, 0.2);
+            box-shadow: 0 25px 60px rgba(196, 162, 101, 0.2);
         }
 
         .pricing-card.popular:hover {
-            transform: scale(1.05) translateY(-10px);
+            transform: scale(1.05) translateY(-5px);
         }
 
         .popular-badge {
             position: absolute;
-            top: -12px;
+            top: -14px;
             left: 50%;
             transform: translateX(-50%);
             background: var(--gold);
             color: var(--primary);
-            padding: 5px 20px;
-            border-radius: 20px;
+            padding: 8px 25px;
+            border-radius: 25px;
             font-size: 0.8rem;
             font-weight: 700;
+            white-space: nowrap;
         }
 
         .pricing-card h3 {
             color: var(--gold);
-            font-size: 1.5rem;
-            margin-bottom: 5px;
+            font-size: 1.6rem;
+            margin-bottom: 8px;
         }
 
         .pricing-card .subtitle {
-            color: rgba(255, 255, 255, 0.7);
+            color: rgba(255, 255, 255, 0.6);
             font-size: 0.9rem;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
 
         .pricing-card .price {
-            font-size: 2.2rem;
+            font-size: 2.5rem;
             font-weight: 700;
             color: var(--white);
-            margin-bottom: 5px;
             font-family: 'Cormorant Garamond', serif;
         }
 
         .pricing-card .price-currency {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             color: var(--gold);
         }
 
         .pricing-card .description {
-            color: rgba(255, 255, 255, 0.8);
+            color: rgba(255, 255, 255, 0.75);
             font-size: 0.9rem;
             margin: 20px 0;
-            padding: 0 10px;
             line-height: 1.6;
+            min-height: 50px;
         }
 
         .pricing-features {
@@ -442,13 +633,13 @@
         }
 
         .pricing-features li {
-            color: var(--white);
+            color: rgba(255, 255, 255, 0.9);
             font-size: 0.9rem;
-            padding: 8px 0;
+            padding: 10px 0;
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             display: flex;
             align-items: flex-start;
-            gap: 10px;
+            gap: 12px;
         }
 
         .pricing-features li:last-child {
@@ -457,7 +648,7 @@
 
         .pricing-features i {
             color: var(--gold);
-            margin-top: 4px;
+            margin-top: 3px;
         }
 
         .pricing-note {
@@ -465,41 +656,116 @@
             font-size: 0.85rem;
             font-weight: 600;
             margin-top: 15px;
+            font-style: italic;
         }
 
         .pricing-card .btn {
             width: 100%;
             justify-content: center;
-            margin-top: 20px;
+            margin-top: 25px;
+        }
+
+        /* Testimonial Section */
+        .testimonials {
+            background: var(--bg-cream);
+            padding: 80px 30px;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .testimonial-card {
+            background: var(--white);
+            padding: 35px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            position: relative;
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: 20px;
+            left: 25px;
+            font-size: 4rem;
+            color: var(--gold);
+            opacity: 0.3;
+            font-family: 'Cormorant Garamond', serif;
+            line-height: 1;
+        }
+
+        .testimonial-card p {
+            font-size: 1rem;
+            line-height: 1.8;
+            color: var(--text);
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .testimonial-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .testimonial-info strong {
+            display: block;
+            color: var(--primary);
+            font-size: 1rem;
+        }
+
+        .testimonial-info span {
+            color: var(--text-light);
+            font-size: 0.85rem;
         }
 
         /* Process Section */
         .process {
-            background: var(--bg-cream);
+            background: var(--bg-warm);
             padding: 80px 30px;
         }
 
         .process-steps {
             display: flex;
             justify-content: center;
-            gap: 60px;
+            gap: 40px;
             flex-wrap: wrap;
-            max-width: 900px;
+            max-width: 1000px;
             margin: 0 auto;
         }
 
         .process-step {
             text-align: center;
             flex: 1;
-            min-width: 220px;
+            min-width: 250px;
+            max-width: 300px;
             position: relative;
         }
 
         .process-step::after {
             content: '→';
             position: absolute;
-            right: -40px;
-            top: 30px;
+            right: -30px;
+            top: 40px;
             font-size: 2rem;
             color: var(--gold);
         }
@@ -509,59 +775,86 @@
         }
 
         .process-number {
-            width: 60px;
-            height: 60px;
-            background: var(--gold);
-            color: var(--primary);
+            width: 80px;
+            height: 80px;
+            background: var(--primary);
+            color: var(--gold);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.5rem;
+            font-size: 2rem;
             font-weight: 700;
-            margin: 0 auto 20px;
+            margin: 0 auto 25px;
             font-family: 'Cormorant Garamond', serif;
+            box-shadow: 0 10px 30px rgba(10, 22, 40, 0.2);
         }
 
         .process-step h3 {
-            font-size: 1.3rem;
+            font-size: 1.4rem;
             color: var(--primary);
-            margin-bottom: 10px;
+            margin-bottom: 12px;
         }
 
         .process-step p {
             color: var(--text-light);
             font-size: 0.95rem;
+            line-height: 1.6;
         }
 
-        /* CTA Banner */
-        .cta-banner {
-            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
-            padding: 60px 30px;
+        .process-note {
             text-align: center;
+            margin-top: 50px;
+            padding: 25px;
+            background: var(--white);
+            border-radius: 15px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
         }
 
-        .cta-banner h3 {
+        .process-note p {
             color: var(--primary);
-            font-size: 2rem;
-            margin-bottom: 15px;
-        }
-
-        .cta-banner p {
-            color: var(--primary);
+            font-weight: 600;
             font-size: 1.1rem;
-            margin-bottom: 25px;
-            opacity: 0.9;
         }
 
-        .cta-banner .btn-primary {
-            background: var(--primary);
+        .process-note span {
             color: var(--gold);
         }
 
-        .cta-banner .btn-primary:hover {
+        /* Final CTA */
+        .final-cta {
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+            padding: 80px 30px;
+            text-align: center;
+        }
+
+        .final-cta h2 {
+            color: var(--primary);
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .final-cta p {
+            color: var(--primary);
+            font-size: 1.2rem;
+            margin-bottom: 35px;
+            opacity: 0.9;
+        }
+
+        .final-cta .btn {
+            background: var(--primary);
+            color: var(--gold);
+            font-size: 1.2rem;
+            padding: 22px 50px;
+        }
+
+        .final-cta .btn:hover {
             background: var(--primary-light);
-            box-shadow: 0 10px 30px rgba(15, 26, 46, 0.3);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(10, 22, 40, 0.3);
         }
 
         /* Contact Section */
@@ -571,87 +864,131 @@
         }
 
         .contact-container {
-            max-width: 600px;
+            max-width: 700px;
             margin: 0 auto;
             text-align: center;
         }
 
         .contact h2 {
             color: var(--gold);
-            font-size: 2.2rem;
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .contact-subtitle {
+            color: rgba(255,255,255,0.8);
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+        }
+
+        .contact-card {
+            background: var(--primary-light);
+            border: 2px solid var(--gold);
+            border-radius: 25px;
+            padding: 50px 40px;
+        }
+
+        .contact-photo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin: 0 auto 25px;
+            background: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&q=80') center/cover;
+            border: 4px solid var(--gold);
+        }
+
+        .contact-name {
+            color: var(--white);
+            font-size: 2rem;
+            font-family: 'Cormorant Garamond', serif;
+            margin-bottom: 5px;
+        }
+
+        .contact-role {
+            color: var(--gold);
+            font-size: 1rem;
             margin-bottom: 30px;
         }
 
         .contact-buttons {
             display: flex;
             flex-direction: column;
-            gap: 20px;
-            margin-bottom: 40px;
+            gap: 15px;
         }
 
         .btn-whatsapp {
             background: #25D366;
             color: var(--white);
-            font-size: 1.2rem;
+            font-size: 1.15rem;
             padding: 20px 40px;
         }
 
         .btn-whatsapp:hover {
             background: #22c55e;
-            transform: translateY(-2px);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.3);
         }
 
         .btn-call {
-            background: var(--white);
-            color: var(--primary);
-            font-size: 1.1rem;
+            background: transparent;
+            border: 2px solid var(--white);
+            color: var(--white);
         }
 
         .btn-call:hover {
-            background: var(--gold);
+            background: var(--white);
+            color: var(--primary);
         }
 
-        .contact-name {
-            color: var(--white);
-            font-size: 1.8rem;
-            font-family: 'Cormorant Garamond', serif;
-            margin-bottom: 10px;
+        .contact-phone-display {
+            margin-top: 30px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.2);
         }
 
-        .contact-phone {
+        .contact-phone-display span {
+            color: rgba(255,255,255,0.7);
+            font-size: 0.9rem;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .contact-phone-display a {
             color: var(--gold);
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             font-weight: 700;
+            text-decoration: none;
+            font-family: 'Cormorant Garamond', serif;
         }
 
         /* Footer */
         .footer {
             background: var(--primary-light);
-            padding: 25px;
+            padding: 30px;
             text-align: center;
         }
 
         .footer p {
-            color: rgba(255, 255, 255, 0.7);
+            color: rgba(255, 255, 255, 0.6);
             font-size: 0.9rem;
         }
 
         /* Floating WhatsApp */
         .floating-whatsapp {
             position: fixed;
-            bottom: 30px;
-            right: 30px;
+            bottom: 25px;
+            right: 25px;
             z-index: 999;
             background: #25D366;
             color: white;
-            width: 65px;
-            height: 65px;
+            width: 70px;
+            height: 70px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 2rem;
-            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            font-size: 2.2rem;
+            box-shadow: 0 5px 25px rgba(37, 211, 102, 0.5);
             transition: all 0.3s;
             text-decoration: none;
             animation: pulse 2s infinite;
@@ -659,11 +996,30 @@
 
         .floating-whatsapp:hover {
             transform: scale(1.1);
+            box-shadow: 0 8px 35px rgba(37, 211, 102, 0.6);
         }
 
         @keyframes pulse {
-            0%, 100% { box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4); }
-            50% { box-shadow: 0 4px 35px rgba(37, 211, 102, 0.7); }
+            0%, 100% { box-shadow: 0 5px 25px rgba(37, 211, 102, 0.5); }
+            50% { box-shadow: 0 5px 40px rgba(37, 211, 102, 0.8); }
+        }
+
+        /* Floating CTA Mobile */
+        .mobile-cta {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: var(--primary);
+            padding: 15px 20px;
+            z-index: 998;
+            box-shadow: 0 -5px 20px rgba(0,0,0,0.2);
+        }
+
+        .mobile-cta .btn {
+            width: 100%;
+            justify-content: center;
         }
 
         /* Responsive */
@@ -677,37 +1033,63 @@
                 display: none;
             }
 
-            .pricing-grid {
+            .hero-trust {
+                justify-content: center;
+            }
+
+            .hero-cta {
+                justify-content: center;
+            }
+
+            .about-grid {
                 grid-template-columns: 1fr;
-                max-width: 400px;
+            }
+
+            .about-image {
+                order: -1;
+                max-width: 500px;
+                margin: 0 auto;
+            }
+
+            .pricing-grid,
+            .benefits-grid {
+                grid-template-columns: 1fr;
+                max-width: 450px;
+                margin: 0 auto;
             }
 
             .pricing-card.popular {
                 transform: none;
             }
 
-            .benefits-grid {
+            .testimonial-grid {
                 grid-template-columns: 1fr;
-                max-width: 400px;
-                margin: 0 auto;
             }
         }
 
         @media (max-width: 768px) {
             .hero h1 {
-                font-size: 2rem;
+                font-size: 2.2rem;
             }
 
             .section-header h2 {
-                font-size: 1.8rem;
+                font-size: 2rem;
             }
 
             .process-steps {
                 flex-direction: column;
-                gap: 40px;
+                align-items: center;
             }
 
             .process-step::after {
+                display: none;
+            }
+
+            .about-features {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-cta span {
                 display: none;
             }
         }
@@ -723,11 +1105,18 @@
             }
 
             .floating-whatsapp {
-                width: 55px;
-                height: 55px;
-                font-size: 1.6rem;
-                bottom: 20px;
-                right: 20px;
+                width: 60px;
+                height: 60px;
+                font-size: 1.8rem;
+                bottom: 90px;
+            }
+
+            .mobile-cta {
+                display: block;
+            }
+
+            .hero {
+                padding-bottom: 100px;
             }
         }
     </style>
@@ -738,11 +1127,10 @@
         <div class="nav-container">
             <a href="#" class="logo">
                 <span class="logo-hebrew">מקץ השקעות</span>
-                <span>Maketz</span>
             </a>
-            <a href="tel:+9720523067745" class="nav-contact">
-                <i class="fas fa-phone"></i>
-                052-306-7745
+            <a href="https://wa.me/9720523067745?text=Bonjour%20Yossef,%20je%20souhaite%20une%20analyse%20gratuite." class="nav-cta">
+                <i class="fab fa-whatsapp"></i>
+                <span>Analyse Gratuite</span>
             </a>
         </div>
     </nav>
@@ -753,7 +1141,7 @@
             <div class="hero-content">
                 <div class="hero-logo">
                     <div class="hero-logo-hebrew">מקץ השקעות</div>
-                    <div class="hero-logo-text">Maketz Hypothèques</div>
+                    <div class="hero-logo-subtitle">Accompagnement hypothécaire à distance</div>
                 </div>
                 <h1>Conseil Hypothécaire à Distance</h1>
                 <p class="hero-subtitle">
@@ -761,53 +1149,105 @@
                     et évitez les démarches inutiles
                 </p>
                 <p class="hero-description">
-                    Mon objectif : vous accompagner vers l'obtention de taux d'intérêt nettement plus bas, 
-                    une structure de prêt sécurisée et une économie de <strong>dizaines de milliers de shekels</strong> 
-                    — de manière accessible, rapide et confortable, sans quitter votre domicile.
+                    Mon objectif est simple : vous accompagner vers l'obtention de taux d'intérêt 
+                    <strong>nettement plus bas</strong>, une structure de prêt sécurisée et une économie de 
+                    <strong>dizaines de milliers de shekels</strong> — de manière accessible, rapide et confortable, 
+                    sans quitter votre domicile.
                 </p>
+                <div class="hero-trust">
+                    <i class="fas fa-shield-alt"></i>
+                    <p>Membre de l'Association des conseillers en hypothèques en Israël — 2 000 conseillers agréés</p>
+                </div>
                 <div class="hero-cta">
-                    <a href="https://wa.me/9720523067745?text=Bonjour%20Yossef,%20je%20souhaite%20des%20informations%20sur%20vos%20services%20de%20conseil%20hypothécaire." class="btn btn-primary">
-                        <i class="fab fa-whatsapp"></i> Contactez-moi
+                    <a href="https://wa.me/9720523067745?text=Bonjour%20Yossef,%20je%20souhaite%20une%20analyse%20gratuite%20de%20ma%20situation." class="btn btn-gold">
+                        <i class="fab fa-whatsapp"></i> Analyse Gratuite
                     </a>
-                    <a href="#formules" class="btn btn-outline">
+                    <a href="#formules" class="btn btn-outline-light">
                         Voir les formules
                     </a>
                 </div>
             </div>
             <div class="hero-image">
-                <img src="https://images.unsplash.com/photo-1560472355-536de3962603?w=600&q=80" alt="Conseil hypothécaire" class="hero-image-main">
-                <div class="hero-badge">
-                    <div class="hero-badge-number">2000+</div>
-                    <div class="hero-badge-text">Conseillers agréés<br>en Israël</div>
+                <img src="https://images.unsplash.com/photo-1560520653-9e0e4c89eb11?w=600&q=80" alt="Famille heureuse devant leur maison" class="hero-image-main">
+                <div class="hero-stats">
+                    <div class="hero-stat">
+                        <div class="hero-stat-number">2000+</div>
+                        <div class="hero-stat-text">Conseillers<br>agréés</div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Association Badge -->
-    <div class="association-badge">
-        <p>
-            <strong>Membre de l'Association des conseillers en hypothèques en Israël</strong> — 
-            le seul organisme officiel reconnu dans le pays représentant le domaine des hypothèques, 
-            comptant environ 2 000 conseillers agréés et travaillant avec toutes les banques 
-            et les organismes financiers non bancaires.
-        </p>
+    <!-- Urgency Banner -->
+    <div class="urgency-banner">
+        <p>📞 <strong>Analyse gratuite et sans engagement</strong> — Découvrez combien vous pouvez économiser dès aujourd'hui !</p>
     </div>
 
-    <!-- Advantages Section -->
-    <section class="advantages">
+    <!-- About Section -->
+    <section class="about">
+        <div class="section-container">
+            <div class="about-grid">
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600&q=80" alt="Conseiller à l'écoute">
+                    <div class="about-image-badge">
+                        <div class="number">100%</div>
+                        <div class="text">À distance</div>
+                    </div>
+                </div>
+                <div class="about-content">
+                    <h2>Un accompagnement <span>personnalisé</span> et humain</h2>
+                    <p>
+                        Je travaille avec toutes les banques et organismes financiers d'Israël pour vous obtenir 
+                        les meilleures conditions possibles. Mon engagement : transparence totale, fiabilité absolue 
+                        et un service sans compromis.
+                    </p>
+                    <p>
+                        L'association dispose de contacts professionnels dans chaque banque et chaque organisme financier, 
+                        ce qui permet une communication directe et efficace pour défendre vos intérêts.
+                    </p>
+                    <div class="about-features">
+                        <div class="about-feature">
+                            <i class="fas fa-handshake"></i>
+                            <span>Transparence totale</span>
+                        </div>
+                        <div class="about-feature">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Fiabilité garantie</span>
+                        </div>
+                        <div class="about-feature">
+                            <i class="fas fa-university"></i>
+                            <span>Toutes les banques</span>
+                        </div>
+                        <div class="about-feature">
+                            <i class="fas fa-comments"></i>
+                            <span>Communication directe</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Advantage Box -->
+    <section class="advantage-section">
         <div class="section-container">
             <div class="advantage-box">
                 <h3>Votre Avantage</h3>
                 <p>
                     Position de négociation forte, capacité de financement élevée, 
-                    et accompagnement professionnel garantissant un haut niveau 
-                    d'intégrité et de précision.
+                    et accompagnement professionnel garantissant un <strong>haut niveau d'intégrité et de précision</strong>.
                 </p>
             </div>
+        </div>
+    </section>
 
+    <!-- Benefits Section -->
+    <section class="benefits">
+        <div class="section-container">
             <div class="section-header">
                 <h2>Pourquoi choisir le conseil à distance ?</h2>
+                <p>Tous les avantages d'un conseiller expert, sans les contraintes</p>
             </div>
 
             <div class="benefits-grid">
@@ -816,32 +1256,41 @@
                         <i class="fas fa-bolt"></i>
                     </div>
                     <h3>Rapidité</h3>
-                    <p>Aucune nécessité de fixer une réunion physique, de se déplacer ou d'attendre. Tout le processus est effectué en ligne ou par téléphone.</p>
+                    <p>Aucune nécessité de fixer une réunion physique, de se déplacer ou d'attendre. Tout le processus est effectué en ligne ou par téléphone. Gain de temps significatif !</p>
                 </div>
                 <div class="benefit-card">
                     <div class="benefit-icon">
                         <i class="fas fa-home"></i>
                     </div>
                     <h3>Flexibilité Totale</h3>
-                    <p>Tout se fait depuis votre domicile, à l'heure qui vous convient. Communication via WhatsApp, téléphone et visioconférence.</p>
+                    <p>Tout se fait depuis votre domicile, à l'heure qui vous convient. Communication via WhatsApp, téléphone et visioconférence — selon votre préférence.</p>
                 </div>
                 <div class="benefit-card">
                     <div class="benefit-icon">
-                        <i class="fas fa-shekel-sign"></i>
+                        <i class="fas fa-piggy-bank"></i>
                     </div>
                     <h3>Tarif Avantageux</h3>
-                    <p>Moins de frais de structure = des tarifs plus compétitifs pour vous, sans compromis sur la qualité du service.</p>
+                    <p>Moins de frais de structure signifie des tarifs plus compétitifs pour vous, sans aucun compromis sur la qualité du service et de l'accompagnement.</p>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Mid CTA -->
+    <div class="mid-cta">
+        <h3>Prêt à <span>économiser des milliers de shekels</span> ?</h3>
+        <p>Contactez-moi maintenant pour une analyse gratuite de votre situation</p>
+        <a href="https://wa.me/9720523067745?text=Bonjour%20Yossef,%20je%20souhaite%20savoir%20combien%20je%20peux%20économiser." class="btn btn-gold">
+            <i class="fab fa-whatsapp"></i> Découvrir mes économies
+        </a>
+    </div>
 
     <!-- Pricing Section -->
     <section class="pricing" id="formules">
         <div class="section-container">
             <div class="section-header">
                 <h2>Formules au Choix</h2>
-                <p>Choisissez l'accompagnement adapté à vos besoins</p>
+                <p>Choisissez l'accompagnement adapté à vos besoins et votre budget</p>
             </div>
 
             <div class="pricing-grid">
@@ -850,31 +1299,31 @@
                     <h3>Formule de Base</h3>
                     <div class="subtitle">"Processus et recommandations"</div>
                     <div class="price">1 200 – 1 500 <span class="price-currency">₪</span></div>
-                    <p class="description">Adaptée aux personnes disposant de connaissances de base et souhaitant gérer seules la procédure bancaire.</p>
+                    <p class="description">Idéale si vous avez des connaissances de base et souhaitez gérer seul la procédure bancaire.</p>
                     <ul class="pricing-features">
                         <li><i class="fas fa-check"></i> Vérification complète des données</li>
-                        <li><i class="fas fa-check"></i> Construction d'un plan hypothécaire personnalisé</li>
+                        <li><i class="fas fa-check"></i> Plan hypothécaire personnalisé</li>
                         <li><i class="fas fa-check"></i> Recommandations précises</li>
                     </ul>
-                    <p class="pricing-note">Sans négociation directe avec les banques</p>
-                    <a href="https://wa.me/9720523067745?text=Bonjour%20Yossef,%20je%20suis%20intéressé(e)%20par%20la%20Formule%20de%20Base." class="btn btn-primary">Choisir</a>
+                    <p class="pricing-note">Sans négociation avec les banques</p>
+                    <a href="https://wa.me/9720523067745?text=Bonjour%20Yossef,%20je%20suis%20intéressé(e)%20par%20la%20Formule%20de%20Base." class="btn btn-gold">Choisir cette formule</a>
                 </div>
 
                 <!-- Complete - Popular -->
                 <div class="pricing-card popular">
-                    <span class="popular-badge">LA PLUS POPULAIRE</span>
+                    <span class="popular-badge">⭐ LA PLUS POPULAIRE</span>
                     <h3>Formule Complète</h3>
                     <div class="subtitle">"Conseil hypothécaire à distance"</div>
                     <div class="price">3 500 – 4 500 <span class="price-currency">₪</span></div>
-                    <p class="description">Accompagnement professionnel depuis le début jusqu'à la signature bancaire.</p>
+                    <p class="description">Accompagnement complet du début jusqu'à la signature bancaire.</p>
                     <ul class="pricing-features">
                         <li><i class="fas fa-check"></i> Vérification complète des données</li>
                         <li><i class="fas fa-check"></i> Plan hypothécaire personnalisé</li>
                         <li><i class="fas fa-check"></i> Recommandations précises</li>
                         <li><i class="fas fa-check"></i> <strong>Négociation avec les banques</strong></li>
-                        <li><i class="fas fa-check"></i> Accompagnement jusqu'à la signature du prêt</li>
+                        <li><i class="fas fa-check"></i> Accompagnement jusqu'à la signature</li>
                     </ul>
-                    <a href="https://wa.me/9720523067745?text=Bonjour%20Yossef,%20je%20suis%20intéressé(e)%20par%20la%20Formule%20Complète." class="btn btn-primary">Choisir</a>
+                    <a href="https://wa.me/9720523067745?text=Bonjour%20Yossef,%20je%20suis%20intéressé(e)%20par%20la%20Formule%20Complète." class="btn btn-gold">Choisir cette formule</a>
                 </div>
 
                 <!-- Premium -->
@@ -882,16 +1331,48 @@
                     <h3>Formule Premium</h3>
                     <div class="subtitle">Service VIP</div>
                     <div class="price">5 000 – 6 000 <span class="price-currency">₪</span></div>
-                    <p class="description">Service VIP complet jusqu'à l'obtention du prêt.</p>
+                    <p class="description">Service VIP complet jusqu'à l'obtention finale du prêt.</p>
                     <ul class="pricing-features">
-                        <li><i class="fas fa-check"></i> Tout ce qui est inclus dans la Formule Complète</li>
+                        <li><i class="fas fa-check"></i> Tout de la Formule Complète</li>
                         <li><i class="fas fa-check"></i> Accompagnement jusqu'à réception finale</li>
                         <li><i class="fas fa-check"></i> Contrôle des assurances</li>
                         <li><i class="fas fa-check"></i> Revue annuelle sans frais</li>
                         <li><i class="fas fa-check"></i> Disponibilité prioritaire</li>
                         <li><i class="fas fa-check"></i> Groupe WhatsApp privé VIP</li>
                     </ul>
-                    <a href="https://wa.me/9720523067745?text=Bonjour%20Yossef,%20je%20suis%20intéressé(e)%20par%20la%20Formule%20Premium." class="btn btn-primary">Choisir</a>
+                    <a href="https://wa.me/9720523067745?text=Bonjour%20Yossef,%20je%20suis%20intéressé(e)%20par%20la%20Formule%20Premium." class="btn btn-gold">Choisir cette formule</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Ce que disent nos clients</h2>
+            </div>
+
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <p>Service impeccable ! Yossef m'a fait économiser plus de 40 000 ₪ sur mon prêt. Je recommande à 100% pour tous ceux qui cherchent un conseiller sérieux et réactif.</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">D</div>
+                        <div class="testimonial-info">
+                            <strong>David M.</strong>
+                            <span>Tel Aviv</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p>Le fait de pouvoir tout faire à distance m'a vraiment facilité la vie. Communication rapide par WhatsApp, recommandations claires. Parfait !</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">S</div>
+                        <div class="testimonial-info">
+                            <strong>Sarah L.</strong>
+                            <span>Netanya</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -902,34 +1383,38 @@
         <div class="section-container">
             <div class="section-header">
                 <h2>Comment commencer ?</h2>
-                <p>Un processus simple en 3 étapes</p>
+                <p>Un processus simple et rapide en 3 étapes</p>
             </div>
 
             <div class="process-steps">
                 <div class="process-step">
                     <div class="process-number">1</div>
                     <h3>Questionnaire</h3>
-                    <p>Je vous envoie un court questionnaire ciblé pour comprendre votre situation.</p>
+                    <p>Je vous envoie un court questionnaire ciblé pour comprendre votre situation et vos objectifs.</p>
                 </div>
                 <div class="process-step">
                     <div class="process-number">2</div>
                     <h3>Analyse Gratuite</h3>
-                    <p>Analyse complète de vos capacités financières — sans frais ni engagement.</p>
+                    <p>Analyse complète de vos capacités financières — <strong>sans frais ni engagement</strong>.</p>
                 </div>
                 <div class="process-step">
                     <div class="process-number">3</div>
                     <h3>Accompagnement</h3>
-                    <p>Si compatibilité et économies possibles, nous poursuivons ensemble le processus.</p>
+                    <p>Si je peux vous faire économiser de l'argent, nous poursuivons ensemble le processus.</p>
                 </div>
+            </div>
+
+            <div class="process-note">
+                <p>💡 <span>Disponible pour toute question</span> — n'hésitez pas à me contacter !</p>
             </div>
         </div>
     </section>
 
-    <!-- CTA Banner -->
-    <div class="cta-banner">
-        <h3>Alors, qu'attendez-vous ?</h3>
-        <p>Contactez-moi pour une analyse gratuite de votre situation</p>
-        <a href="https://wa.me/9720523067745?text=Bonjour%20Yossef,%20je%20souhaite%20une%20analyse%20gratuite%20de%20ma%20situation%20hypothécaire." class="btn btn-primary">
+    <!-- Final CTA -->
+    <div class="final-cta">
+        <h2>Alors, qu'attendez-vous ?</h2>
+        <p>Cliquez ici pour m'envoyer un message WhatsApp</p>
+        <a href="https://wa.me/9720523067745?text=Bonjour%20Yossef,%20je%20souhaite%20une%20analyse%20gratuite%20de%20ma%20situation%20hypothécaire." class="btn">
             <i class="fab fa-whatsapp"></i> Envoyer un message WhatsApp
         </a>
     </div>
@@ -938,16 +1423,27 @@
     <section class="contact" id="contact">
         <div class="contact-container">
             <h2>Contactez-moi</h2>
-            <div class="contact-buttons">
-                <a href="https://wa.me/9720523067745?text=Bonjour%20Yossef,%20je%20souhaite%20des%20informations%20sur%20vos%20services." class="btn btn-whatsapp">
-                    <i class="fab fa-whatsapp"></i> Écrire sur WhatsApp
-                </a>
-                <a href="tel:+9720523067745" class="btn btn-call">
-                    <i class="fas fa-phone"></i> Appeler directement
-                </a>
+            <p class="contact-subtitle">Je suis là pour répondre à toutes vos questions</p>
+            
+            <div class="contact-card">
+                <div class="contact-photo"></div>
+                <div class="contact-name">Yossef</div>
+                <div class="contact-role">Conseiller Hypothécaire Agréé</div>
+                
+                <div class="contact-buttons">
+                    <a href="https://wa.me/9720523067745?text=Bonjour%20Yossef,%20je%20souhaite%20des%20informations%20sur%20vos%20services." class="btn btn-whatsapp">
+                        <i class="fab fa-whatsapp"></i> Écrire sur WhatsApp
+                    </a>
+                    <a href="tel:+9720523067745" class="btn btn-call">
+                        <i class="fas fa-phone"></i> Appeler directement
+                    </a>
+                </div>
+
+                <div class="contact-phone-display">
+                    <span>Téléphone direct</span>
+                    <a href="tel:+9720523067745">052-306-7745</a>
+                </div>
             </div>
-            <div class="contact-name">Yossef</div>
-            <div class="contact-phone">052-306-7745</div>
         </div>
     </section>
 
@@ -960,6 +1456,13 @@
     <a href="https://wa.me/9720523067745?text=Bonjour%20Yossef,%20je%20souhaite%20des%20informations." class="floating-whatsapp" title="Contactez-moi sur WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
+
+    <!-- Mobile CTA -->
+    <div class="mobile-cta">
+        <a href="https://wa.me/9720523067745?text=Bonjour%20Yossef,%20je%20souhaite%20une%20analyse%20gratuite." class="btn btn-gold">
+            <i class="fab fa-whatsapp"></i> Analyse Gratuite
+        </a>
+    </div>
 
     <script>
         // Smooth scroll
